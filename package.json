@@ -1,0 +1,8 @@
+{
+  "name": "@boundaryml/baml-treesitter",
+  "version": "0.0.0-dev",
+  "private": true,
+  "description": "tree-sitter grammar for BAML (read-only mirror of typescript2/pkg-grammar-treesitter in BoundaryML/baml)",
+  "license": "Apache-2.0",
+  "repository": "github:BoundaryML/baml-treesitter"
+}
