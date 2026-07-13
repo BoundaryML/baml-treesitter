@@ -3424,6 +3424,22 @@
     "named": false
   },
   {
+    "type": "\"#####",
+    "named": false
+  },
+  {
+    "type": "\"######",
+    "named": false
+  },
+  {
+    "type": "\"#######",
+    "named": false
+  },
+  {
+    "type": "\"########",
+    "named": false
+  },
+  {
     "type": "#\"",
     "named": false
   },
@@ -3437,6 +3453,22 @@
   },
   {
     "type": "####\"",
+    "named": false
+  },
+  {
+    "type": "#####\"",
+    "named": false
+  },
+  {
+    "type": "######\"",
+    "named": false
+  },
+  {
+    "type": "#######\"",
+    "named": false
+  },
+  {
+    "type": "########\"",
     "named": false
   },
   {
@@ -3719,6 +3751,10 @@
   },
   {
     "type": "if",
+    "named": false
+  },
+  {
+    "type": "implement",
     "named": false
   },
   {
