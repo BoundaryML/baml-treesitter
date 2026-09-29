@@ -120,6 +120,10 @@
         "named": true
       },
       {
+        "type": "specialized_expression",
+        "named": true
+      },
+      {
         "type": "string",
         "named": true
       },
@@ -2852,12 +2856,48 @@
           }
         ]
       },
-      "options": {
+      "modifier": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      },
+      "name": {
         "multiple": false,
         "required": false,
         "types": [
           {
             "type": "_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "specialized_expression",
+    "named": true,
+    "fields": {
+      "function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      },
+      "type_arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_arguments",
             "named": true
           }
         ]

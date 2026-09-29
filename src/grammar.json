@@ -2967,6 +2967,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "specialized_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "constructor_expression"
         },
         {
@@ -3240,6 +3244,35 @@
             }
           }
         ]
+      }
+    },
+    "specialized_expression": {
+      "type": "PREC_DYNAMIC",
+      "value": -1,
+      "content": {
+        "type": "PREC",
+        "value": 14,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "function",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_expression"
+              }
+            },
+            {
+              "type": "FIELD",
+              "name": "type_arguments",
+              "content": {
+                "type": "SYMBOL",
+                "name": "type_arguments"
+              }
+            }
+          ]
+        }
       }
     },
     "optional_call_expression": {
@@ -5092,6 +5125,26 @@
           "type": "CHOICE",
           "members": [
             {
+              "type": "FIELD",
+              "name": "name",
+              "content": {
+                "type": "PREC_DYNAMIC",
+                "value": -1,
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                }
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
               "type": "SEQ",
               "members": [
                 {
@@ -5099,12 +5152,49 @@
                   "value": "with"
                 },
                 {
-                  "type": "FIELD",
-                  "name": "options",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "_expression"
-                  }
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "modifier",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_expression"
+                      }
+                    },
+                    {
+                      "type": "REPEAT",
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": ","
+                          },
+                          {
+                            "type": "FIELD",
+                            "name": "modifier",
+                            "content": {
+                              "type": "SYMBOL",
+                              "name": "_expression"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": ","
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             },
@@ -6403,17 +6493,24 @@
     ],
     [
       "call_expression",
+      "specialized_expression",
       "binary_expression",
       "unary_expression"
     ],
     [
       "call_expression",
+      "specialized_expression",
       "binary_expression"
     ],
     [
       "call_expression",
+      "specialized_expression",
       "binary_expression",
       "await_expression"
+    ],
+    [
+      "call_expression",
+      "specialized_expression"
     ],
     [
       "binding_pattern",
@@ -6492,6 +6589,10 @@
     [
       "_for_in_header",
       "template_for_open"
+    ],
+    [
+      "_expression",
+      "spawn_expression"
     ]
   ],
   "precedences": [],
