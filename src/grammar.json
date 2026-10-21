@@ -3054,6 +3054,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "raw_quoted_string"
+        },
+        {
+          "type": "SYMBOL",
           "name": "raw_string"
         },
         {
@@ -5906,6 +5910,38 @@
           {
             "type": "STRING",
             "value": "b\""
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "[^\"\\\\]"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "\\\\."
+                }
+              ]
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "\""
+          }
+        ]
+      }
+    },
+    "raw_quoted_string": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "r\""
           },
           {
             "type": "REPEAT",

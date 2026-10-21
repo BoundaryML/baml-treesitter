@@ -108,6 +108,10 @@
         "named": true
       },
       {
+        "type": "raw_quoted_string",
+        "named": true
+      },
+      {
         "type": "raw_string",
         "named": true
       },
@@ -3893,6 +3897,10 @@
   },
   {
     "type": "quote",
+    "named": true
+  },
+  {
+    "type": "raw_quoted_string",
     "named": true
   },
   {
