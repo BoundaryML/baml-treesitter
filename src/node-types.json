@@ -52,6 +52,10 @@
         "named": true
       },
       {
+        "type": "companion_expression",
+        "named": true
+      },
+      {
         "type": "constructor_expression",
         "named": true
       },
@@ -992,6 +996,32 @@
     }
   },
   {
+    "type": "client_value_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "coalesce_expression",
     "named": true,
     "fields": {
@@ -1006,6 +1036,32 @@
         ]
       },
       "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "companion_expression",
+    "named": true,
+    "fields": {
+      "companion": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "property_identifier",
+            "named": true
+          }
+        ]
+      },
+      "function": {
         "multiple": false,
         "required": true,
         "types": [
@@ -2713,6 +2769,10 @@
         "required": true,
         "types": [
           {
+            "type": "backtick_string",
+            "named": true
+          },
+          {
             "type": "raw_string",
             "named": true
           }
@@ -2847,6 +2907,10 @@
         },
         {
           "type": "client_declaration",
+          "named": true
+        },
+        {
+          "type": "client_value_declaration",
           "named": true
         },
         {

@@ -39,6 +39,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "client_value_declaration"
+        },
+        {
+          "type": "SYMBOL",
           "name": "generator_declaration"
         },
         {
@@ -1087,8 +1091,17 @@
           "type": "FIELD",
           "name": "value",
           "content": {
-            "type": "SYMBOL",
-            "name": "raw_string"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "backtick_string"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "raw_string"
+              }
+            ]
           }
         },
         {
@@ -1162,6 +1175,51 @@
           "value": ">"
         }
       ]
+    },
+    "client_value_declaration": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "client"
+          },
+          {
+            "type": "FIELD",
+            "name": "name",
+            "content": {
+              "type": "SYMBOL",
+              "name": "identifier"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "="
+          },
+          {
+            "type": "FIELD",
+            "name": "value",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ";"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "generator_declaration": {
       "type": "SEQ",
@@ -3090,6 +3148,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "companion_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "constructor_expression"
         },
         {
@@ -3271,6 +3333,64 @@
           {
             "type": "STRING",
             "value": ">"
+          }
+        ]
+      }
+    },
+    "companion_expression": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "function",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "IMMEDIATE_TOKEN",
+            "content": {
+              "type": "PATTERN",
+              "value": "[ \\t]*@"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "companion",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "spec"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "stream"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "render_prompt"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "build_request"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "parse"
+                  }
+                ]
+              },
+              "named": true,
+              "value": "property_identifier"
+            }
           }
         ]
       }
