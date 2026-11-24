@@ -2849,6 +2849,11 @@
     }
   },
   {
+    "type": "property_identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "raw_string",
     "named": true,
     "fields": {},
@@ -4099,10 +4104,6 @@
     "named": true
   },
   {
-    "type": "property_identifier",
-    "named": true
-  },
-  {
     "type": "quote",
     "named": true
   },
@@ -4180,6 +4181,10 @@
   },
   {
     "type": "type_builder",
+    "named": false
+  },
+  {
+    "type": "upcast",
     "named": false
   },
   {

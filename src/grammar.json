@@ -3368,14 +3368,35 @@
             "content": {
               "type": "ALIAS",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "identifier"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "upcast_identifier"
+                  }
+                ]
               },
               "named": true,
               "value": "property_identifier"
             }
           }
         ]
+      }
+    },
+    "upcast_identifier": {
+      "type": "PREC_DYNAMIC",
+      "value": -1,
+      "content": {
+        "type": "PREC",
+        "value": 15,
+        "content": {
+          "type": "STRING",
+          "value": "upcast"
+        }
       }
     },
     "tuple_field_expression": {
@@ -3440,7 +3461,7 @@
           },
           {
             "type": "STRING",
-            "value": "as"
+            "value": "upcast"
           },
           {
             "type": "STRING",
@@ -3457,6 +3478,14 @@
           {
             "type": "STRING",
             "value": ">"
+          },
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "STRING",
+            "value": ")"
           }
         ]
       }
@@ -7082,6 +7111,10 @@
     [
       "constructor_expression",
       "_expression"
+    ],
+    [
+      "upcast_expression",
+      "upcast_identifier"
     ],
     [
       "parameter",
