@@ -4136,8 +4136,17 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "map_entry"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "map_entry"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "spread_element"
+                }
+              ]
             },
             {
               "type": "REPEAT",
@@ -4149,8 +4158,17 @@
                     "value": ","
                   },
                   {
-                    "type": "SYMBOL",
-                    "name": "map_entry"
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "map_entry"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "spread_element"
+                      }
+                    ]
                   }
                 ]
               }
